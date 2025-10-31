@@ -1,0 +1,21 @@
+{
+  "name": "ong-esperanca-viva",
+  "version": "1.0.0",
+  "description": "Website da ONG Esperança Viva",
+  "scripts": {
+    "minify": "npm run minify:css && npm run minify:js && npm run minify:html",
+    "minify:css": "cleancss -o dist/css/styles.min.css css/*.css",
+    "minify:js": "terser js/*.js -o dist/js/scripts.min.js --compress --mangle",
+    "minify:html": "html-minifier --input-dir . --output-dir dist --file-ext html --remove-comments --collapse-whitespace --minify-css --minify-js",
+    "build": "npm run clean && npm run copy && npm run minify",
+    "clean": "rm -rf dist",
+    "copy": "mkdir -p dist/imagens && cp -r imagens/* dist/imagens/",
+    "serve": "npx http-server dist -p 3000"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "html-minifier": "^4.0.0",
+    "terser": "^5.24.0",
+    "http-server": "^14.1.1"
+  }
+}

@@ -8,8 +8,32 @@ export function router() {
   function navigate(page) {
     main.innerHTML = templates[page];
     localStorage.setItem("lastPage", page);
+    
+    updateActiveLink(page);
+    updatePageTitle(page);
+    main.focus();
 
     if (page === "cadastro") formValidator();
+  }
+
+  function updateActiveLink(currentPage) {
+    links.forEach(link => {
+      const route = link.getAttribute("data-route");
+      if (route === currentPage) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  function updatePageTitle(page) {
+    const titles = {
+      home: "ONG Esperança Viva - Início",
+      projetos: "ONG Esperança Viva - Projetos",
+      cadastro: "ONG Esperança Viva - Cadastro de Voluntário"
+    };
+    document.title = titles[page] || "ONG Esperança Viva";
   }
 
   links.forEach(link => {

@@ -72,3 +72,38 @@ input.erro {
   margin-bottom: var(--space-2);
 }
 
+.success-message {
+  background: var(--cor-sucesso);
+  color: white;
+  padding: var(--space-2);
+  border-radius: 6px;
+  margin-bottom: var(--space-2);
+  text-align: center;
+}
+
+.projeto-card:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: var(--space-1);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
+}
+
+nav ul li a[aria-current="page"] {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
