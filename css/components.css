@@ -36,3 +36,13 @@ input:focus {
   border-color: var(--cor-primaria);
   outline: none;
 }
+
+input.erro {
+  border-color: var(--cor-erro);
+  background: #ffe8e8;
+}
+.msg-erro {
+  color: var(--cor-erro);
+  font-size: 0.875rem;
+}
+
