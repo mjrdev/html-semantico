@@ -1,0 +1,30 @@
+:root {
+  --cor-primaria: #2a9d8f;
+  --cor-secundaria: #e76f51;
+  --cor-terciaria: #264653;
+  --cor-sucesso: #2ecc71;
+  --cor-aviso: #f4a261;
+  --cor-erro: #e63946;
+  --cor-info: #219ebc;
+  --cor-neutra: #f8f9fa;
+
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-xxl: 2rem;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--cor-terciaria);
+  background: var(--cor-neutra);
+  margin: 0;
+}

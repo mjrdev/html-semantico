@@ -1,0 +1,38 @@
+button, .btn {
+  background: var(--cor-secundaria);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--cor-erro);
+}
+
+/* formulário */
+form {
+  display: grid;
+  gap: var(--space-2);
+  background: #fff;
+  padding: var(--space-3);
+  border-radius: 10px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:focus {
+  border-color: var(--cor-primaria);
+  outline: none;
+}

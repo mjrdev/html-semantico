@@ -1,0 +1,30 @@
+header, footer {
+  background: var(--cor-primaria);
+  color: white;
+  padding: var(--space-2);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: var(--space-2);
+}
+
+main {
+  padding: var(--space-4);
+}
+
+/* grid 12 colunas */
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-2);
+}
+
+/* breakpoints */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
