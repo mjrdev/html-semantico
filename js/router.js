@@ -9,7 +9,6 @@ export function router() {
     main.innerHTML = templates[page];
     localStorage.setItem("lastPage", page);
 
-    // ativa validação se estiver no formulário
     if (page === "cadastro") formValidator();
   }
 
@@ -22,13 +21,11 @@ export function router() {
     });
   });
 
-  // suporte ao botão Voltar/Avançar do navegador
   window.addEventListener("popstate", () => {
     const page = location.pathname.replace("/", "") || "index";
     navigate(page);
   });
 
-  // carrega última página visitada ou home
   const last = localStorage.getItem("lastPage") || "home";
   navigate(last);
 }

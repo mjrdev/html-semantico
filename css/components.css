@@ -12,13 +12,21 @@ button:hover {
   background: var(--cor-erro);
 }
 
-/* formulário */
 form {
   display: grid;
   gap: var(--space-2);
   background: #fff;
   padding: var(--space-3);
   border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 label {
@@ -44,5 +52,23 @@ input.erro {
 .msg-erro {
   color: var(--cor-erro);
   font-size: 0.875rem;
+}
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.projeto-card {
+  background: #fff;
+  padding: var(--space-3);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-card h3 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--space-2);
 }
 

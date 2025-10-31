@@ -13,18 +13,30 @@ nav ul {
 
 main {
   padding: var(--space-4);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* grid 12 colunas */
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--space-2);
 }
 
-/* breakpoints */
+main.container > section {
+  grid-column: 1 / -1;
+}
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
+  }
+  
+  form {
+    margin: 0 var(--space-2);
+    max-width: none;
+  }
+  
+  main {
+    padding: var(--space-2);
   }
 }
