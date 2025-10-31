@@ -5,11 +5,13 @@
   "scripts": {
     "minify": "npm run minify:css && npm run minify:js && npm run minify:html",
     "minify:css": "cleancss -o dist/css/styles.min.css css/*.css",
-    "minify:js": "terser js/*.js -o dist/js/scripts.min.js --compress --mangle",
+    "minify:js": "mkdir -p dist/js && terser js/main.js -o dist/js/main.min.js --compress --mangle --module && terser js/router.js -o dist/js/router.min.js --compress --mangle --module && terser js/templates.js -o dist/js/templates.min.js --compress --mangle --module && terser js/formValidator.js -o dist/js/formValidator.min.js --compress --mangle --module",
     "minify:html": "html-minifier --input-dir . --output-dir dist --file-ext html --remove-comments --collapse-whitespace --minify-css --minify-js",
-    "build": "npm run clean && npm run copy && npm run minify",
+    "build": "npm run clean && npm run copy && npm run minify && npm run update-html && npm run update-imports",
     "clean": "rm -rf dist",
     "copy": "mkdir -p dist/imagens && cp -r imagens/* dist/imagens/",
+    "update-html": "node update-html.js",
+    "update-imports": "node update-imports.js",
     "serve": "npx http-server dist -p 3000"
   },
   "devDependencies": {

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+const fs = require('fs');
+const path = require('path');
+
+const htmlContent = `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -39,4 +42,7 @@
 
   <script type="module" src="js/main.min.js"></script>
 </body>
-</html>
+</html>`;
+
+fs.writeFileSync(path.join(__dirname, 'dist', 'index.html'), htmlContent);
+console.log('✅ HTML atualizado com referências aos arquivos minificados');
