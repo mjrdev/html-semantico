@@ -77,4 +77,9 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync . s3://mjrdev-static-site --delete
+          aws s3 sync . s3://mjrdev-static-site --delete \
+          --exclude "*" \
+          --include "*.html" \
+          --include "*.js" \
+          --include "*.css" \
+          --include "imagens/*" \
