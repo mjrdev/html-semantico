@@ -79,7 +79,4 @@ jobs:
         run: |
           aws s3 sync . s3://mjrdev-static-site --delete \
           --exclude "*" \
-          --include "*.html" \
-          --include "*.js" \
-          --include "*.css" \
-          --include "imagens/*" \
+          --include "dist/*" \
