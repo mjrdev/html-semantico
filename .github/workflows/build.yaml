@@ -72,9 +72,14 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:assws:iam::723307322553:role/github_pipeline
+          role-to-assume: arn:aws:iam::723307322553:role/github_pipeline
           aws-region: us-east-1
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://mjrdev-static-site --deletes
+          aws s3 sync . s3://mjrdev-static-site --delete \
+          --exclude "*" \
+          --include "*.html" \
+          --include "*.js" \
+          --include "*.css" \
+          --include "imagens/*" \
