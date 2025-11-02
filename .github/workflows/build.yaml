@@ -67,7 +67,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build
-          path: ./dist
+          path: .
 
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
@@ -77,7 +77,8 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync ./dist s3://mjrdev-static-site --delete
+          aws s3 sync ./dist s3://mjrdev-static-site --delete \ 
+            --exclude "/node_modules/*"
 
       - name: Invalidate CloudFront cache
         run: |
