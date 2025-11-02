@@ -1,7 +1,7 @@
 export const templates = {
   home: `
     <section role="main" aria-labelledby="titulo-home">
-      <h1 id="titulo-home">ONG Esperança Viva</h1>
+      <h1 id="titulo-home">ONG Esperança Viva 2s</h1>
       <p>Nossa missão é promover a inclusão social e transformar vidas por meio de ações solidárias.</p>
       <div style="text-align: center; margin-top: var(--space-3);">
         <img src="imagens/voluntarios.png" alt="Grupo de voluntários da ONG Esperança Viva trabalhando em atividades comunitárias" style="max-width: 100%; height: auto; border-radius: 10px;">
