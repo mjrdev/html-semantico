@@ -1,5 +1,5 @@
 # Build dos arquivos minificados
-
+dist/
 
 # Dependências do Node.js
 node_modules/
