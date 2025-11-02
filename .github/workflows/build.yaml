@@ -78,3 +78,9 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync ./dist s3://mjrdev-static-site --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ENHV1DYB8DR4I \
+            --paths "/*"
